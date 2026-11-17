@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" fill="none">
+  <defs>
+    <linearGradient id="wall" x1="56" y1="34" x2="824" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5F8F4"/>
+      <stop offset="1" stop-color="#E6EFE9"/>
+    </linearGradient>
+    <linearGradient id="counter" x1="283" y1="372" x2="814" y2="532" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF"/>
+      <stop offset="1" stop-color="#EAF0EB"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="900" height="560" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#18372A" flood-opacity=".12"/>
+    </filter>
+  </defs>
+  <rect width="900" height="560" rx="28" fill="url(#wall)"/>
+  <circle cx="784" cy="92" r="110" fill="#DFF0CF" opacity=".72"/>
+  <path d="M0 455h900v105H0z" fill="#DFE8E2"/>
+  <path d="M0 456h900" stroke="#C7D3CC" stroke-width="3"/>
+
+  <g filter="url(#shadow)">
+    <rect x="45" y="56" width="190" height="328" rx="15" fill="#FFF" stroke="#D7E1DA" stroke-width="3"/>
+    <path d="M45 159h190M45 263h190M45 365h190" stroke="#D7E1DA" stroke-width="8"/>
+    <g stroke="#253A31" stroke-width="3">
+      <rect x="63" y="76" width="30" height="66" rx="7" fill="#BFD5CC"/>
+      <rect x="102" y="72" width="32" height="70" rx="7" fill="#E8B9A1"/>
+      <rect x="144" y="80" width="29" height="62" rx="7" fill="#D9EAB5"/>
+      <rect x="184" y="75" width="30" height="67" rx="7" fill="#CBD9E8"/>
+      <rect x="64" y="178" width="32" height="65" rx="7" fill="#B9D9E8"/>
+      <rect x="105" y="172" width="29" height="71" rx="7" fill="#ECD5A8"/>
+      <rect x="145" y="180" width="30" height="63" rx="7" fill="#E6C2D1"/>
+      <rect x="185" y="174" width="29" height="69" rx="7" fill="#BFD8C6"/>
+      <rect x="64" y="282" width="30" height="67" rx="7" fill="#E4C8A8"/>
+      <rect x="104" y="276" width="31" height="73" rx="7" fill="#D4E3F0"/>
+      <rect x="146" y="285" width="29" height="64" rx="7" fill="#BED9C6"/>
+      <rect x="184" y="280" width="30" height="69" rx="7" fill="#E9BDA8"/>
+    </g>
+    <g fill="#253A31">
+      <circle cx="78" cy="84" r="2"/><circle cx="117" cy="81" r="2"/><circle cx="159" cy="88" r="2"/><circle cx="199" cy="83" r="2"/>
+      <circle cx="79" cy="186" r="2"/><circle cx="119" cy="180" r="2"/><circle cx="159" cy="188" r="2"/><circle cx="199" cy="182" r="2"/>
+    </g>
+  </g>
+
+  <ellipse cx="532" cy="460" rx="260" ry="26" fill="#C9D7CF" opacity=".55"/>
+
+  <!-- Customer -->
+  <path d="M273 347c6-60 32-97 75-98 47-1 75 39 79 101l-8 72H280l-7-75Z" fill="#335B75"/>
+  <path d="M297 406h101l-12 72h-72l-17-72Z" fill="#E5B78E"/>
+  <path d="M312 249c-4 19-4 39 6 53 8 12 21 20 35 19 14-1 27-10 33-24 6-15 4-34-3-50l-71 2Z" fill="#B97658"/>
+  <ellipse cx="346" cy="203" rx="39" ry="46" fill="#C98E6D"/>
+  <path d="M308 202c-5-32 9-58 39-60 28-1 46 16 45 42-12-7-21-19-27-30-10 17-28 27-57 27v21Z" fill="#27332F"/>
+  <path d="M318 202h15m22 0h15" stroke="#253A31" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="328" cy="210" r="2.5" fill="#253A31"/><circle cx="363" cy="210" r="2.5" fill="#253A31"/>
+  <path d="M335 230c7 7 16 7 23 0" stroke="#7B4236" stroke-width="3" stroke-linecap="round"/>
+  <path d="M374 288c32 8 56 22 86 38" stroke="#C98E6D" stroke-width="18" stroke-linecap="round"/>
+  <path d="M297 283c-13 19-17 43-17 65" stroke="#253A31" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- Technician -->
+  <path d="M551 346c5-61 30-98 75-99 49-1 76 39 80 102l-8 74H557l-6-77Z" fill="#147C5B"/>
+  <path d="M575 407h104l-12 71h-74l-18-71Z" fill="#203B33"/>
+  <path d="M575 248c-4 20-3 40 7 54 8 12 20 20 34 20 15-1 28-10 34-24 6-15 4-34-3-50l-72 0Z" fill="#D39A76"/>
+  <ellipse cx="611" cy="202" rx="39" ry="46" fill="#D9A582"/>
+  <path d="M573 201c-4-32 10-58 40-59 27-1 45 15 45 41-13-4-24-13-31-26-9 15-28 24-54 23v21Z" fill="#28342F"/>
+  <circle cx="596" cy="209" r="2.5" fill="#253A31"/><circle cx="628" cy="209" r="2.5" fill="#253A31"/>
+  <path d="M601 229c7 6 15 6 21 0" stroke="#884B3D" stroke-width="3" stroke-linecap="round"/>
+  <path d="M570 289c-27 7-49 20-72 36" stroke="#D9A582" stroke-width="18" stroke-linecap="round"/>
+  <path d="M654 285c15 18 20 41 21 63" stroke="#253A31" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- Repaired phone handover -->
+  <path d="M438 329c16-12 27-15 42-8l22 11c8 4 10 14 4 20-5 5-12 5-18 2l-15-7-12 8c-8 5-18 4-25-2l-7-6 9-18Z" fill="#C98E6D"/>
+  <rect x="467" y="275" width="37" height="63" rx="8" transform="rotate(9 467 275)" fill="#1D312A"/>
+  <rect x="472" y="282" width="27" height="48" rx="4" transform="rotate(9 472 282)" fill="#DCEBDF"/>
+  <circle cx="486" cy="279" r="2" fill="#9FB3A8"/>
+
+  <!-- Service counter -->
+  <g filter="url(#shadow)">
+    <path d="M250 371h586l-27 38H277l-27-38Z" fill="#FFF" stroke="#D4DFD8" stroke-width="3"/>
+    <path d="M278 409h531v118H278z" fill="url(#counter)" stroke="#D4DFD8" stroke-width="3"/>
+    <path d="M278 409h531v14H278z" fill="#D9E9D8"/>
+    <text x="543" y="476" fill="#18372A" font-family="Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle" letter-spacing="1.5">LEARNOTECH SOLUTIONS</text>
+    <text x="543" y="503" fill="#618072" font-family="Arial, sans-serif" font-size="13" font-weight="600" text-anchor="middle" letter-spacing="2">REPAIR • UPGRADE • CONNECT</text>
+    <rect x="690" y="326" width="98" height="8" rx="4" fill="#253A31"/>
+    <path d="M704 333h73v38h-73z" fill="#233A33"/>
+    <path d="M710 339h61v25h-61z" fill="#CAD8D1"/>
+    <path d="M695 374h92" stroke="#253A31" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(716 74)">
+    <rect width="120" height="50" rx="25" fill="#FFF"/>
+    <circle cx="26" cy="25" r="13" fill="#E7F5D4"/>
+    <path d="m20 25 4 4 8-9" stroke="#168456" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M48 20h54M48 30h36" stroke="#8A9A90" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Product | LEARNOTECH SOLUTIONS</title>
+<link rel="stylesheet" href="header-unify.css">
+<link rel="stylesheet" href="what-we-do.css">
+<link rel="stylesheet" href="wv.css">
+<link rel="stylesheet" href="addons.css?v=1">
+<link rel="stylesheet" href="wv3.css?v=4">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f1f1f1;color:#13243a;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+.pd-wrap{max-width:1200px;width:calc(100% - 32px);margin:0 auto;padding:16px 0 40px}
+.pd-crumbs{font-size:.82rem;color:#0b79bf;margin-bottom:12px}.pd-crumbs a{color:#0b79bf;text-decoration:none}.pd-crumbs span{color:#999;margin:0 6px}
+.pd-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,.8fr);gap:16px;align-items:start}
+.pd-card{background:#fff;border-radius:8px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.pd-main{display:grid;grid-template-columns:72px minmax(0,1fr);gap:14px}
+.pd-thumbs{display:flex;flex-direction:column;gap:8px}
+.pd-thumbs button{width:64px;height:64px;padding:2px;border:2px solid #ddd;border-radius:4px;background:#fff;cursor:pointer}
+.pd-thumbs button.on{border-color:#0b79bf}.pd-thumbs img{width:100%;height:100%;object-fit:contain;display:block}
+.pd-photo{border:1px solid #e5e5e5;border-radius:4px;height:420px;display:grid;place-items:center;background:#fff}
+.pd-photo img{max-width:100%;max-height:100%;object-fit:contain}
+.pd-info{margin-top:20px}
+.pd-info h1{margin:0 0 6px;font-size:1.5rem;font-weight:400;color:#333;line-height:1.3}
+.pd-cat{color:#0b79bf;font-size:.9rem}
+.pd-desc{color:#777;font-size:.9rem;margin:10px 0 14px}
+.pd-line{border-top:1px solid #e3e3e3;margin:14px 0}
+.pd-stock{font-weight:700}.pd-tag{background:#eee;border-radius:3px;font-size:.72rem;padding:2px 8px;margin-left:8px;color:#555}
+.pd-list{margin:12px 0 0;padding-left:20px;color:#444;font-size:.9rem}.pd-list li{margin:7px 0}
+.pd-buy .pd-price{font-size:1.9rem;font-weight:800;color:#111;margin:0 0 12px}
+.pd-btn{display:block;width:100%;text-align:center;padding:14px 12px;border-radius:4px;font-weight:700;text-decoration:none;margin-top:10px;border:0;font-size:1rem;cursor:pointer}
+.pd-wa{background:#1a8a3c;color:#fff}.pd-back{background:#efefef;color:#333}
+.pd-more{margin-top:16px}.pd-more h2{font-size:1.1rem;color:#444;margin:0 0 10px}
+.pd-row{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px}
+.pd-mini{flex:0 0 160px;background:#fff;border:1px solid #eee;border-radius:8px;padding:10px;text-decoration:none;color:#333;font-size:.85rem}
+.pd-mini img{width:100%;height:130px;object-fit:contain;display:block;margin-bottom:8px}
+.pd-empty{padding:40px;text-align:center;color:#666}
+@media(max-width:860px){.pd-grid{grid-template-columns:1fr}.pd-main{grid-template-columns:1fr}.pd-thumbs{flex-direction:row;order:2}.pd-photo{height:300px}}
+</style></head>
+<body class="product-page">
+<script src="site.js"></script>
+<main class="pd-wrap" id="product-root"></main>
+<script src="product.js"></script>
+</body></html>

@@ -1,0 +1,25 @@
+/* header-unify: makes every inner page use the white home-page header */
+body:not(.admin-page) .topbar#site-header,body:not(.admin-page) #site-header.topbar{position:sticky!important;top:0!important;left:0!important;width:100%!important;max-width:none!important;height:64px!important;min-height:64px!important;margin:0!important;padding:0 24px!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;background:#fff!important;border-bottom:1px solid #e2e6ea!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;z-index:200!important;opacity:1!important;pointer-events:auto!important}
+#site-header .brand{display:flex!important;align-items:center!important;gap:10px!important}
+#site-header .brand-logo{width:44px!important;height:44px!important;object-fit:contain!important}
+#site-header .nav .nav-dropdown{display:flex!important;position:relative!important;align-items:center!important}
+@media (min-width:851px){
+#site-header .nav{display:flex!important;align-items:center!important;justify-content:center!important;list-style:none;margin:0;padding:0 12px}
+#site-header .nav>a,#site-header .nav-dropdown>.nav-page-link{display:inline-flex!important;align-items:center!important;gap:5px;height:64px!important;padding:0 11px!important;color:#374151!important;font-size:.82rem!important;font-weight:600!important;text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent!important}
+#site-header .nav>a:hover,#site-header .nav-dropdown>.nav-page-link:hover{color:#1d4ed8!important;border-bottom-color:#1d4ed8!important}
+#site-header .nav>a[aria-current=page]{color:#1d4ed8!important;border-bottom-color:#1d4ed8!important;font-weight:700!important}
+#site-header .nav-ico{width:14px;height:14px;opacity:.6}
+#site-header .nav-trigger{height:64px!important;color:#374151!important}
+#site-header .header-actions{display:flex!important;align-items:center;gap:3px}
+}
+@media (max-width:850px){#site-header .header-actions{display:none!important}}
+/* repairs-page-fix */
+body.repairs-page .topbar#site-header{display:flex!important}
+body.repairs-page main{padding-top:28px!important}
+@media (max-width:850px){body.repairs-page .menu-toggle{display:flex!important}body.repairs-page .nav-overlay:not([hidden]){display:block!important}}
+
+/* no-brand-text */
+#site-header .brand{font-size:0!important;gap:0!important;line-height:0!important}
+#site-header .brand .brand-text,#site-header .brand .brand-sol,#site-header .brand span,#site-header .brand strong,#site-header .brand small{display:none!important}
+#site-header .brand .brand-logo,#site-header .brand img{display:block!important;width:44px!important;height:44px!important}
+/* end-no-brand-text */

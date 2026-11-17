@@ -1,0 +1,21 @@
+/* wv3: white steps, navy chat, light closing band */
+body.repairs-page .wv-steps{background:#fff!important;color:#0b1120!important}
+body.repairs-page .wv-steps h3,body.repairs-page .wv-steps h4{color:#0b1120!important}
+body.repairs-page .wv-steps p,body.repairs-page .wv-steps .sub{color:#525365!important}
+body.repairs-page .wv-steps .n{background:#1d4ed8!important;color:#fff!important}
+body.repairs-page .wv-chat{background:#141827!important}
+body.repairs-page .wv-chat h2,body.repairs-page .wv-chat h3{color:#fff!important}
+body.repairs-page .wv-chat>.wv-spring>p{color:#a8acb8!important}
+body.repairs-page .wv-end{background:#f5f6f7!important;color:#0b1120!important}
+body.repairs-page .wv-end h3{color:#0b1120!important}
+body.repairs-page .wv-end p{color:#525365!important}
+/* wv3-fix1: side space inside the white How it works section */
+body.repairs-page .wv-steps .wv-spring{padding-left:clamp(32px,6vw,110px)!important;padding-right:clamp(32px,6vw,110px)!important;padding-top:24px!important;padding-bottom:24px!important}
+body.repairs-page .wv-steps ol{gap:clamp(20px,3vw,40px)}
+@media (max-width:850px){body.repairs-page .wv-steps .wv-spring{padding-left:28px!important;padding-right:28px!important}}
+/* wv3-inset: white How it works shape sits inside the page edges */
+body.repairs-page .wv-swoop i.tl[style*="#ffffff"],body.repairs-page .wv-swoop i.bl[style*="#ffffff"]{margin-left:clamp(16px,4vw,60px)!important;margin-right:clamp(16px,4vw,60px)!important}
+body.repairs-page .wv-steps{border-left:clamp(16px,4vw,60px) solid transparent!important;border-right:clamp(16px,4vw,60px) solid transparent!important;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(#0b1120,#141827) border-box!important}
+/* wv3-inset2: no gap on the right, gap on the left only */
+body.repairs-page .wv-swoop i.tl[style*="#ffffff"],body.repairs-page .wv-swoop i.bl[style*="#ffffff"]{margin-right:0!important}
+body.repairs-page .wv-steps{border-right:0!important;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(#0b1120,#141827) border-box!important}

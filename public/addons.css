@@ -1,0 +1,23 @@
+/* addons.css */
+body.repairs-page .wv-addons{margin-top:56px}
+body.repairs-page .wv-addons-h{margin:0 0 24px;text-align:center;font-size:clamp(1.7rem,4vw,3rem);color:#fff;line-height:1.1}
+body.repairs-page .wv-addons-g{display:grid;grid-template-columns:repeat(6,1fr);gap:28px}
+body.repairs-page .wv-ad{position:relative;display:flex;align-items:center;min-height:300px;border-radius:32px;border:1.5px solid #12a5ff;text-decoration:none;color:#fff;overflow:hidden;background:radial-gradient(120% 140% at -10% 90%,#1d4ed8 0%,#0f2a6b 45%,#050a1a 100%)}
+body.repairs-page .wv-ad:nth-child(1){grid-column:1/3}
+body.repairs-page .wv-ad:nth-child(2){grid-column:3/7}
+body.repairs-page .wv-ad:nth-child(3){grid-column:1/4}
+body.repairs-page .wv-ad:nth-child(4){grid-column:4/7}
+body.repairs-page .wv-ad:hover{box-shadow:0 0 30px rgba(18,165,255,.35)}
+body.repairs-page .wv-ad-t{display:flex;flex-direction:column;width:58%;padding:26px 0 26px 26px;align-self:stretch}
+body.repairs-page .wv-ad-t h4{margin:0 0 8px;font-size:clamp(1.3rem,2.2vw,2rem);line-height:1.15;color:#fff}
+body.repairs-page .wv-ad-t p{margin:0;font-size:1rem;line-height:1.5;color:#e6efff}
+body.repairs-page .wv-ad-t .k{margin-top:auto;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#7cc4ff}
+body.repairs-page .wv-ad-i{width:42%;padding:20px;display:flex;align-items:center;justify-content:center}
+body.repairs-page .wv-ad-i img{width:100%;max-width:100%;height:auto;max-height:230px;object-fit:contain;background:#fff;border-radius:18px;padding:10px;box-sizing:border-box}
+body.repairs-page .wv-ad-b{position:absolute;right:24px;bottom:24px;padding:12px 22px;border-radius:50px;background:#fff;color:#0b1120;font-weight:700}
+@media (max-width:1024px){body.repairs-page .wv-addons-g{grid-template-columns:1fr 1fr;gap:20px}body.repairs-page .wv-ad:nth-child(n){grid-column:auto}body.repairs-page .wv-ad{min-height:0;flex-direction:column;align-items:stretch}body.repairs-page .wv-ad-t{width:100%;padding:24px 24px 0}body.repairs-page .wv-ad-t .k{margin-top:16px}body.repairs-page .wv-ad-i{width:100%;padding:16px 24px 84px}}
+@media (max-width:700px){body.repairs-page .wv-addons-g{grid-template-columns:1fr}}
+/* addons-fix2 */
+body.repairs-page .wv-ad{min-height:240px}
+body.repairs-page .wv-ad-t{justify-content:center}
+@media (max-width:1024px){body.repairs-page .wv-ad-i{padding:16px 24px 24px}}

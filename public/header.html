@@ -1,0 +1,557 @@
+<style>/* hdr-fit */#site-header .brand{flex:0 0 auto!important;position:relative!important}#site-header .brand .brand-text{position:static!important;transform:none!important;white-space:nowrap!important}#site-header .brand .brand-text::after{content:none!important}#site-header .nav{flex:1 1 auto!important;min-width:0!important;justify-content:center!important;gap:clamp(6px,1vw,18px)!important}#site-header .nav>a,#site-header .nav .nav-page-link{white-space:nowrap!important;font-size:.86rem!important}#site-header .header-actions{flex:0 0 auto!important;margin-left:auto!important}#site-header .hdr-wa-label{display:none!important}@media (max-width:1500px) and (min-width:851px){#site-header .nav-ico{display:none!important}}</style>
+<header class="topbar" id="site-header">
+
+  <!-- LEFT: Brand -->
+  <a class="brand" href="index.html" aria-label="LEARNOTECH SOLUTIONS home">
+    <img class="brand-logo" src="assets/learnotech-logo-transparent.png" alt="LEARNOTECH SOLUTIONS logo">
+    <span class="brand-text">LEARNOTECH<span class="brand-sol"> SOLUTIONS</span></span>
+  </a>
+
+  <!-- CENTER: Nav -->
+  <nav class="nav" id="site-navigation" aria-label="Main menu">
+    <button class="nav-close" id="mobile-menu-close" type="button"><span>Menu</span><span aria-hidden="true">&times;</span></button>
+
+    <a href="index.html">
+      <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21V12h6v9"/></svg>
+      Home
+    </a>
+
+    <a href="repairs.html">
+      <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><line x1="11" y1="18.5" x2="13" y2="18.5"/></svg>
+      What We Do
+    </a>
+
+    <a href="about.html">
+      <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      About
+    </a>
+
+    <a href="adverts.html">
+      <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2l12 5V6z"/><path d="M18 9a4 4 0 0 1 0 6"/></svg>
+      Adverts
+    </a>
+
+    <a href="accessories.html">
+      <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"/><path d="M9 7V6a3 3 0 0 1 6 0v1"/></svg>
+      Shop
+    </a>
+
+    <a href="contact.html">
+      <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg>
+      Talk To Us
+    </a>
+
+    <div class="nav-dropdown">
+      <a class="nav-page-link" href="repairs.html#services">
+        <svg class="nav-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.2-.5-.5-2.2z"/></svg>
+        Repairs
+      </a>
+      <button class="nav-trigger" type="button" aria-label="Open repair categories" aria-expanded="false" aria-controls="repairs-menu">
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="m2 4 4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="dropdown-menu" id="repairs-menu">
+        <div class="submenu-parent">
+          <button class="submenu-trigger" type="button" aria-expanded="false" aria-controls="smartphone-menu">Smartphone <span aria-hidden="true">&rsaquo;</span></button>
+          <div class="submenu-menu" id="smartphone-menu">
+            <a href="repairs.html#device-repair" data-device="smartphone" data-brand="iPhone">iPhone</a>
+            <a href="repairs.html#device-repair" data-device="smartphone" data-brand="Samsung">Samsung</a>
+            <a href="repairs.html#device-repair" data-device="smartphone" data-brand="Google Pixel">Google Pixel</a>
+            <a href="repairs.html#device-repair" data-device="smartphone" data-brand="OnePlus">OnePlus</a>
+            <a href="repairs.html#device-repair" data-device="smartphone" data-brand="Sony">Sony</a>
+            <a href="repairs.html#device-repair" data-device="smartphone" data-brand="All Smartphones" data-clear-model>All Smartphones</a>
+          </div>
+        </div>
+        <div class="submenu-parent">
+          <button class="submenu-trigger" type="button" aria-expanded="false" aria-controls="tablet-menu">Tablet <span aria-hidden="true">&rsaquo;</span></button>
+          <div class="submenu-menu" id="tablet-menu">
+            <a href="repairs.html#device-repair" data-device="tablet" data-brand="iPad">iPad</a>
+            <a href="repairs.html#device-repair" data-device="tablet" data-brand="Amazon Tab">Amazon Tab</a>
+            <a href="repairs.html#device-repair" data-device="tablet" data-brand="Galaxy Tab">Galaxy Tab</a>
+            <a href="repairs.html#device-repair" data-device="tablet" data-brand="All Tablets" data-clear-model>All Tablets</a>
+          </div>
+        </div>
+        <div class="submenu-parent">
+          <button class="submenu-trigger" type="button" aria-expanded="false" aria-controls="computer-menu">PC &amp; Laptop <span aria-hidden="true">&rsaquo;</span></button>
+          <div class="submenu-menu" id="computer-menu">
+            <a href="repairs.html#device-repair" data-device="pc-laptop" data-brand="Mac">Mac</a>
+            <a href="repairs.html#device-repair" data-device="pc-laptop" data-brand="PC">PC</a>
+            <a href="repairs.html#device-repair" data-device="pc-laptop" data-brand="Laptop">Laptop</a>
+            <a href="repairs.html#device-repair" data-device="pc-laptop" data-brand="All PCs &amp; Laptops" data-clear-model>All PCs &amp; Laptops</a>
+          </div>
+        </div>
+        <div class="submenu-parent">
+          <button class="submenu-trigger" type="button" aria-expanded="false" aria-controls="console-menu">Gaming Console <span aria-hidden="true">&rsaquo;</span></button>
+          <div class="submenu-menu" id="console-menu">
+            <a href="repairs.html#device-repair" data-device="gaming-console" data-brand="Nintendo">Nintendo</a>
+            <a href="repairs.html#device-repair" data-device="gaming-console" data-brand="PlayStation">PlayStation</a>
+            <a href="repairs.html#device-repair" data-device="gaming-console" data-brand="Xbox">Xbox</a>
+            <a href="repairs.html#device-repair" data-device="gaming-console" data-brand="All Gaming Consoles" data-clear-model>All Gaming Consoles</a>
+          </div>
+        </div>
+        <div class="submenu-parent">
+          <button class="submenu-trigger" type="button" aria-expanded="false" aria-controls="smartwatch-menu">Smartwatch <span aria-hidden="true">&rsaquo;</span></button>
+          <div class="submenu-menu" id="smartwatch-menu">
+            <a href="repairs.html#device-repair" data-device="smartwatch" data-brand="Apple Watch">Apple Watch</a>
+            <a href="repairs.html#device-repair" data-device="smartwatch" data-brand="Galaxy Watch">Galaxy Watch</a>
+            <a href="repairs.html#device-repair" data-device="smartwatch" data-brand="All Smartwatches" data-clear-model>All Smartwatches</a>
+          </div>
+        </div>
+        <a href="repairs.html#services" data-all-repairs>All Repairs &rsaquo;</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- RIGHT: Action icons -->
+  <div class="header-actions">
+    <!-- WhatsApp -->
+    <a class="hdr-btn hdr-btn-whatsapp" href="https://wa.me/263783060943" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.8 11.8 0 0 0 12.13 0C5.6 0 .28 5.31.28 11.85c0 2.09.55 4.14 1.59 5.95L.18 24l6.37-1.67a11.9 11.9 0 0 0 5.58 1.42h.01c6.53 0 11.85-5.31 11.86-11.85a11.8 11.8 0 0 0-3.48-8.42ZM12.14 21.7a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.78.99 1.01-3.68-.23-.38a9.82 9.82 0 0 1-1.51-5.19c0-5.46 4.45-9.9 9.91-9.9 2.65 0 5.14 1.03 7.01 2.9a9.84 9.84 0 0 1 2.9 7.01c0 5.46-4.45 9.9-9.91 9.9Zm5.44-7.42c-.3-.15-1.77-.87-2.05-.97-.28-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.08 4.48.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/></svg>
+      <span class="hdr-wa-label">WhatsApp</span>
+    </a>
+
+    <div class="hdr-divider" aria-hidden="true"></div>
+
+    <!-- Search -->
+    <div class="hdr-search" id="hdr-search" role="search">
+      <input class="hdr-search-input" id="hdr-search-input" type="search" placeholder="Search repairs..." aria-label="Search repairs" autocomplete="off">
+      <button class="hdr-btn hdr-btn-icon" id="hdr-search-toggle" type="button" aria-label="Search" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    </div>
+
+    <div class="hdr-divider" aria-hidden="true"></div>
+
+    
+
+    <!-- Admin / Account -->
+    <a class="hdr-btn hdr-btn-icon" href="admin.html" aria-label="Admin panel" title="Admin">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    </a>
+  </div>
+
+  <!-- Mobile hamburger -->
+  <button class="menu-toggle" id="mobile-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-navigation">
+    <span></span><span></span><span></span>
+  </button>
+
+</header>
+
+<!-- LT-MOBILE-MENU-START -->
+<style>
+@media (max-width:850px) {
+  html body #site-header.topbar {
+    overflow: visible !important;
+    transform: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    padding: 0 16px !important;
+    gap: 12px !important;
+    isolation: isolate;
+  }
+  html body #site-header .header-actions {
+    display: none !important;
+  }
+  html body #site-header .brand {
+    min-width: 0 !important;
+    max-width: calc(100% - 56px) !important;
+  }
+  html body #site-header #mobile-menu-toggle.menu-toggle {
+    display: flex !important;
+    flex: 0 0 44px !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 5px !important;
+    width: 44px !important;
+    height: 44px !important;
+    margin-left: auto !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 8px !important;
+    background: transparent !important;
+    color: #141827 !important;
+    cursor: pointer;
+  }
+  html body #site-header #mobile-menu-toggle.menu-toggle span {
+    display: block !important;
+    position: static !important;
+    width: 24px !important;
+    height: 2px !important;
+    margin: 0 !important;
+    background: currentColor !important;
+    border-radius: 2px !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  html body #site-header #site-navigation.nav {
+    position: fixed !important;
+    inset: 0 auto 0 0 !important;
+    z-index: 1002 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    flex: none !important;
+    gap: 4px !important;
+    width: min(86vw, 340px) !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    margin: 0 !important;
+    padding: 16px 14px calc(24px + env(safe-area-inset-bottom)) !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    background: #fff !important;
+    color: #141827 !important;
+    border: 0 !important;
+    box-shadow: 12px 0 40px rgba(0,0,0,.18) !important;
+    transform: translateX(-105%) !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    opacity: 1 !important;
+    transition: transform .28s ease, visibility .28s !important;
+  }
+  html body #site-header #site-navigation.nav.lt-menu-open {
+    transform: translateX(0) !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+  html body #site-header #mobile-menu-close.nav-close {
+    display: flex !important;
+    position: static !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    min-height: 48px !important;
+    margin: 0 0 12px !important;
+    padding: 0 12px 12px !important;
+    border: 0 !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    background: #fff !important;
+    color: #141827 !important;
+    font: inherit !important;
+    font-weight: 700 !important;
+    cursor: pointer;
+  }
+  html body #site-header #mobile-menu-close span:last-child {
+    font-size: 30px !important;
+    line-height: 1 !important;
+  }
+  html body #site-header #site-navigation.nav > a,
+  html body #site-header #site-navigation.nav .nav-page-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    height: auto !important;
+    min-height: 48px !important;
+    padding: 12px !important;
+    box-sizing: border-box !important;
+    border: 0 !important;
+    border-radius: 8px !important;
+    color: #141827 !important;
+    font-size: 15px !important;
+    text-decoration: none !important;
+  }
+  html body #site-header #site-navigation.nav a:hover,
+  html body #site-header #site-navigation.nav a[aria-current="page"] {
+    background: #eff6ff !important;
+    color: #0057b8 !important;
+  }
+  html body #site-header #site-navigation.nav .nav-ico {
+    display: block !important;
+    flex: 0 0 20px !important;
+    width: 20px !important;
+    height: 20px !important;
+    margin: 0 !important;
+    opacity: 1 !important;
+  }
+  html body #site-header #site-navigation.nav .nav-dropdown {
+    display: flex !important;
+    position: relative !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  html body #site-header #site-navigation.nav .nav-page-link {
+    flex: 1 1 0 !important;
+  }
+  html body #site-header #site-navigation.nav .nav-trigger {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex: 0 0 44px !important;
+    width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    padding: 12px !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: #141827 !important;
+    cursor: pointer;
+  }
+  html body #site-header #site-navigation.nav .nav-trigger svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  html body #site-header #site-navigation.nav .dropdown-menu,
+  html body #site-header #site-navigation.nav .submenu-menu {
+    display: none !important;
+    position: static !important;
+    inset: auto !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 6px 8px !important;
+    box-sizing: border-box !important;
+    border: 0 !important;
+    border-radius: 8px !important;
+    background: #f5f7fa !important;
+    box-shadow: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    overflow: visible !important;
+  }
+  html body #site-header #site-navigation.nav .nav-dropdown.lt-expanded > .dropdown-menu,
+  html body #site-header #site-navigation.nav .submenu-parent.lt-expanded > .submenu-menu {
+    display: grid !important;
+  }
+  html body #site-header #site-navigation.nav .dropdown-menu::before,
+  html body #site-header #site-navigation.nav .submenu-menu::before {
+    display: none !important;
+  }
+  html body #site-header #site-navigation.nav .submenu-trigger,
+  html body #site-header #site-navigation.nav .dropdown-menu a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    min-height: 44px !important;
+    padding: 10px 12px !important;
+    box-sizing: border-box !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: #141827 !important;
+    font: inherit !important;
+    font-size: 14px !important;
+    text-align: left !important;
+    white-space: normal !important;
+    cursor: pointer;
+  }
+  html body #site-header #lt-mobile-backdrop {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 1001 !important;
+    background: rgba(10,18,32,.5) !important;
+    touch-action: none;
+  }
+  html body #site-header #lt-mobile-backdrop[hidden] {
+    display: none !important;
+  }
+  html body #mobile-menu-overlay {
+    display: none !important;
+    pointer-events: none !important;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  html body #site-header #site-navigation.nav {
+    transition: none !important;
+  }
+}
+</style>
+<script>
+(function () {
+  function init() {
+    var header = document.getElementById("site-header");
+    var nav = document.getElementById("site-navigation");
+    var toggle = document.getElementById("mobile-menu-toggle");
+    var close = document.getElementById("mobile-menu-close");
+    if (!header || !nav || !toggle || !close || header.dataset.ltMobileReady) return;
+    header.dataset.ltMobileReady = "true";
+
+    var mobile = window.matchMedia("(max-width:850px)");
+    var backdrop = document.createElement("div");
+    backdrop.id = "lt-mobile-backdrop";
+    backdrop.hidden = true;
+    backdrop.setAttribute("aria-hidden", "true");
+    header.appendChild(backdrop);
+
+    var opened = false;
+    var savedOverflow = null;
+
+    function setOpen(value, restoreFocus) {
+      opened = mobile.matches && value;
+      nav.classList.toggle("lt-menu-open", opened);
+      toggle.setAttribute("aria-expanded", String(opened));
+      toggle.setAttribute("aria-label", opened ? "Close menu" : "Open menu");
+      backdrop.hidden = !opened;
+      nav.inert = mobile.matches && !opened;
+
+      if (mobile.matches) nav.setAttribute("aria-hidden", String(!opened));
+      else nav.removeAttribute("aria-hidden");
+
+      if (opened) {
+        if (savedOverflow === null) savedOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        close.focus();
+      } else {
+        if (savedOverflow !== null) {
+          document.body.style.overflow = savedOverflow;
+          savedOverflow = null;
+        }
+        document.body.classList.remove("mobile-nav-open");
+        if (restoreFocus) toggle.focus();
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      if (!mobile.matches || !(event.target instanceof Element)) return;
+      var target = event.target;
+
+      if (toggle.contains(target)) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        setOpen(!opened, opened);
+        return;
+      }
+
+      if (close.contains(target) || backdrop.contains(target)) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        setOpen(false, true);
+        return;
+      }
+
+      var trigger = target.closest(".nav-trigger, .submenu-trigger");
+      if (trigger && nav.contains(trigger)) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        var parent = trigger.parentElement;
+        var expanded = parent.classList.toggle("lt-expanded");
+        trigger.setAttribute("aria-expanded", String(expanded));
+        return;
+      }
+
+      if (opened && target.closest("a") && nav.contains(target)) {
+        setOpen(false, false);
+      }
+    }, true);
+
+    document.addEventListener("keydown", function (event) {
+      if (!opened) return;
+      if (event.key === "Escape") {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        setOpen(false, true);
+      } else if (event.key === "Tab") {
+        var items = Array.from(nav.querySelectorAll(
+          'a[href], button:not([disabled]), input:not([disabled]), [tabindex="0"]'
+        )).filter(function (el) { return el.getClientRects().length; });
+        if (!items.length) return;
+        var first = items[0], last = items[items.length - 1];
+        if (event.shiftKey && (document.activeElement === first || !nav.contains(document.activeElement))) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && (document.activeElement === last || !nav.contains(document.activeElement))) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    }, true);
+
+    window.addEventListener("resize", function () {
+      if (!mobile.matches) setOpen(false, false);
+      else if (!opened) setOpen(false, false);
+    });
+
+    setOpen(false, false);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+</script>
+<!-- LT-MOBILE-MENU-END -->
+
+<!-- LT-MENU-MOTION-START -->
+<style>
+@media (max-width:850px) {
+  html body #site-header #site-navigation.nav {
+    transform: translate3d(-105%,0,0) scale(.97) !important;
+    transform-origin: left center !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    will-change: transform, opacity !important;
+    transition:
+      transform .8s cubic-bezier(.4,0,.2,1),
+      opacity .55s ease,
+      visibility 0s linear .8s !important;
+  }
+
+  html body #site-header #site-navigation.nav.lt-menu-open {
+    transform: translate3d(0,0,0) scale(1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transition:
+      transform 1.2s cubic-bezier(.16,1,.3,1),
+      opacity .85s ease,
+      visibility 0s linear 0s !important;
+  }
+
+  html body #site-header #site-navigation.nav > a,
+  html body #site-header #site-navigation.nav > .nav-dropdown {
+    opacity: 0 !important;
+    transform: translate3d(-24px,12px,0) !important;
+    transition:
+      transform .35s ease,
+      opacity .25s ease !important;
+  }
+
+  html body #site-header #site-navigation.nav.lt-menu-open > a,
+  html body #site-header #site-navigation.nav.lt-menu-open > .nav-dropdown {
+    opacity: 1 !important;
+    transform: translate3d(0,0,0) !important;
+    transition:
+      transform .85s cubic-bezier(.16,1,.3,1),
+      opacity .65s ease !important;
+  }
+
+  html body #site-header #site-navigation.nav.lt-menu-open > a:nth-of-type(1) { transition-delay:.24s !important; }
+  html body #site-header #site-navigation.nav.lt-menu-open > a:nth-of-type(2) { transition-delay:.32s !important; }
+  html body #site-header #site-navigation.nav.lt-menu-open > a:nth-of-type(3) { transition-delay:.40s !important; }
+  html body #site-header #site-navigation.nav.lt-menu-open > a:nth-of-type(4) { transition-delay:.48s !important; }
+  html body #site-header #site-navigation.nav.lt-menu-open > a:nth-of-type(5) { transition-delay:.56s !important; }
+  html body #site-header #site-navigation.nav.lt-menu-open > a:nth-of-type(6) { transition-delay:.64s !important; }
+  html body #site-header #site-navigation.nav.lt-menu-open > .nav-dropdown { transition-delay:.72s !important; }
+
+  html body #site-header #site-navigation.nav #mobile-menu-close {
+    opacity: 0 !important;
+    transform: translateY(-12px) !important;
+    transition: transform .3s ease, opacity .25s ease !important;
+  }
+
+  html body #site-header #site-navigation.nav.lt-menu-open #mobile-menu-close {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition:
+      transform .8s cubic-bezier(.16,1,.3,1) .15s,
+      opacity .6s ease .15s !important;
+  }
+}
+</style>
+<!-- LT-MENU-MOTION-END -->
+

@@ -1,0 +1,16 @@
+{
+  "name": "learnotech-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Learnotech phone and device repair website with an Admin upload dashboard.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "devDependencies": {
+    "supabase": "^3.0.0"
+  }
+}

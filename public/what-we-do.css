@@ -1,0 +1,54 @@
+/* what-we-do page: hero + 10 service cards */
+.repairs-page main>section.wwd-hero:not(#services):not(#device-repair),.repairs-page main>section.wwd-offer:not(#services):not(#device-repair){display:block!important}
+.wwd-hero{position:relative;min-height:340px;display:flex;align-items:center;padding:56px clamp(18px,5vw,64px);color:#fff;background:linear-gradient(90deg,rgba(6,20,48,.92),rgba(6,20,48,.55)),url(assets/h1.jpg) center/cover no-repeat}
+.wwd-hero .wwd-in{max-width:640px}
+.wwd-hero .wwd-kicker{margin:0 0 10px;font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#7cc4ff}
+.wwd-hero h1{margin:0 0 12px;font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.08;color:#fff}
+.wwd-hero p{margin:0 0 22px;font-size:1.05rem;line-height:1.5;color:#dbe7f5}
+.wwd-btn{display:inline-block;padding:13px 24px;border-radius:10px;background:#1d4ed8;color:#fff;font-weight:700;text-decoration:none}
+.wwd-btn:hover{background:#1e40af}
+.wwd-offer{padding:44px clamp(14px,3vw,40px) 36px;background:#fff}
+.wwd-head{text-align:center;max-width:720px;margin:0 auto 26px}
+.wwd-head h2{margin:0 0 8px;font-size:clamp(1.5rem,3vw,2.1rem);color:#0b1b3a}
+.wwd-head p{margin:0;color:#4b5b72}
+.wwd-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;max-width:1440px;margin:0 auto}
+.wwd-card{display:flex;flex-direction:column;background:#fff;border:1px solid #dfe7f3;border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;transition:box-shadow .2s,border-color .2s,transform .2s}
+.wwd-card:hover{border-color:#12a5ff;box-shadow:0 10px 30px rgba(18,165,255,.18);transform:translateY(-2px)}
+.wwd-card .wwd-img{aspect-ratio:1/1;background:#fff;display:flex;align-items:center;justify-content:center;border-bottom:1px solid #eef2f8}
+.wwd-card .wwd-img img{width:100%;height:100%;object-fit:contain;padding:12px;box-sizing:border-box;mix-blend-mode:normal;filter:none}
+.wwd-card .wwd-txt{padding:16px 18px 20px}
+.wwd-card h3{margin:0 0 6px;font-size:1rem;color:#0b1b3a}
+.wwd-card p{margin:0;font-size:.88rem;line-height:1.45;color:#4b5b72}
+@media (max-width:1100px){.wwd-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:700px){.wwd-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.wwd-hero{min-height:280px;padding:40px 18px}}
+/* wwd-fix-v2 */
+body.repairs-page main{padding-top:0!important}
+body.repairs-page .wwd-hero{min-height:calc(100vh - 64px)!important;min-height:calc(100svh - 64px)!important}
+body.repairs-page .wwd-grid{grid-template-columns:repeat(10,minmax(0,1fr))!important;gap:10px!important;max-width:none!important}
+body.repairs-page .wwd-offer{padding:36px 14px 32px!important}
+body.repairs-page .wwd-card{border-radius:12px}
+body.repairs-page .wwd-card .wwd-img img{padding:6px}
+body.repairs-page .wwd-card .wwd-txt{padding:10px 10px 14px}
+body.repairs-page .wwd-card h3{font-size:.78rem;line-height:1.25}
+body.repairs-page .wwd-card p{font-size:.68rem;line-height:1.35}
+@media (max-width:1099px) and (min-width:701px){body.repairs-page .wwd-grid{grid-template-columns:repeat(5,minmax(0,1fr))!important}}
+@media (max-width:700px){
+body.repairs-page .wwd-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important}
+body.repairs-page .wwd-card h3{font-size:.9rem}
+body.repairs-page .wwd-card p{font-size:.78rem}
+body.repairs-page .wwd-card .wwd-txt{padding:12px 12px 16px}
+}
+/* wwd-fix-v3: uniform card text */
+body.repairs-page .wwd-card{height:100%}
+body.repairs-page .wwd-card .wwd-txt{flex:1 1 auto;display:flex;flex-direction:column;gap:4px}
+body.repairs-page .wwd-card h3{min-height:2.5em;display:flex;align-items:flex-start;margin:0}
+body.repairs-page .wwd-card p{min-height:4.1em;margin:0}
+body.repairs-page .wwd-card .wwd-img{flex:0 0 auto}
+@media (max-width:700px){
+body.repairs-page .wwd-card h3{min-height:2.6em}
+body.repairs-page .wwd-card p{min-height:4.2em}
+}
+/* wwd-fix-v4: 1-line title, 2-line text */
+body.repairs-page .wwd-card .wwd-txt{display:block!important;padding:10px 10px 14px!important}
+body.repairs-page .wwd-card h3{display:block!important;min-height:0!important;height:1.3em!important;line-height:1.3!important;margin:0 0 6px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important}
+body.repairs-page .wwd-card p{display:-webkit-box!important;-webkit-box-orient:vertical!important;-webkit-line-clamp:2!important;overflow:hidden!important;height:2.7em!important;min-height:0!important;line-height:1.35!important;margin:0!important}
