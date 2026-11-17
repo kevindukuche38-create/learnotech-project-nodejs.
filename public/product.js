@@ -8,7 +8,22 @@ function url(p){return 'product.html?img='+encodeURIComponent(p.image_url)}
 function money(p){var n=Number(p.price);return(p.price!==null&&p.price!==''&&p.price!==undefined&&isFinite(n))?((p.currency||'')+' '+n.toFixed(2)).trim():null}
 function render(p,all){
 document.title=(p.name||'Product')+' | LEARNOTECH SOLUTIONS';
-var cr=el('div','pd-crumbs');cr.appendChild(link('accessories.html','Shop'));cr.appendChild(el('span','','/'));cr.appendChild(link('accessories.html',p.category||'Accessories'));cr.appendChild(el('span','','/'));cr.appendChild(document.createTextNode(p.name||''));root.appendChild(cr);
+var cr=el('div','pd-crumbs');cr.appendChild(link('accessories.html','Shop'));cr.appendChild(el('span','','/'));cr.appendChild(link('accessories.html',p.category||'Accessories'));cr.appendChild(el('span','','/'));cr.appendChild(document.createTextNode(p.name||''));
+var act=el('div','pd-actions');
+var shB=el('button','pd-act');shB.type='button';
+shB.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg><span>Share</span>';
+shB.onclick=function(){
+var shareUrl=location.href,lbl=shB.querySelector('span');
+if(navigator.share){navigator.share({title:p.name||'Product',url:shareUrl}).catch(function(){});return;}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(shareUrl).then(function(){lbl.textContent='Link copied';setTimeout(function(){lbl.textContent='Share';},2000);});}
+else{window.prompt('Copy this link:',shareUrl);}
+};
+var rpA=el('a','pd-act');
+rpA.href='https://wa.me/'+WA+'?text='+encodeURIComponent('Report this product: '+(p.name||'a product')+' ('+location.href+')');
+rpA.target='_blank';rpA.rel='noopener noreferrer';
+rpA.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 22V4"/><path d="M4 4h13l-2 4 2 4H4"/></svg><span>Report this product</span>';
+act.appendChild(shB);act.appendChild(rpA);cr.appendChild(act);
+root.appendChild(cr);
 var grid=el('div','pd-grid');
 var left=el('div','pd-card');var main=el('div','pd-main');
 var th=el('div','pd-thumbs');var b=el('button','on');b.type='button';var ti=el('img');ti.src=p.image_url;ti.alt='';b.appendChild(ti);th.appendChild(b);

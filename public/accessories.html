@@ -443,18 +443,18 @@
 </style><link rel="stylesheet" href="header-unify.css"><style id="shop-takealot-css">
 .accessories-page{background:#f1f1f1}
 .accessories-page main{padding-top:0!important}
-.accessories-page #accessories{max-width:1200px!important;width:calc(100% - 32px)!important;margin:0 auto!important;padding:14px 0 40px!important}
-.shop-top{background:#fff;border-radius:8px;padding:12px;margin-bottom:12px}
-.shop-search{display:flex;background:#f1f1f1;border-radius:6px;overflow:hidden}
+.accessories-page #accessories{max-width:1200px!important;width:calc(100% - 32px)!important;margin:0 auto!important;padding:0 0 40px!important}
+.shop-top{display:flex;align-items:stretch;gap:12px;background:#fff;border-radius:0;padding:12px 16px;margin:0 0 12px}body.accessories-page #shop-top{display:flex!important;flex-direction:row;align-items:stretch}/*slim*/body.accessories-page main > section#accessories .shop-top{padding-top:6px!important;padding-bottom:6px!important}body.accessories-page .shop-cats button{padding:8px 16px!important;font-size:.85rem!important}body.accessories-page .shop-search input{padding:8px 12px!important;font-size:.88rem!important}body.accessories-page .shop-search button{width:40px!important}@media(max-width:700px){.shop-top{flex-direction:column}.shop-search{flex:1 1 auto;margin-left:0}}body.accessories-page main > section#accessories .shop-top{margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important;width:auto!important;max-width:none!important;box-sizing:border-box;padding:12px max(16px,calc((100vw - 1200px)/2)) 12px!important;border-radius:0!important}
+.shop-search{display:flex;flex:0 0 280px;background:#f1f1f1;border-radius:0;overflow:hidden;margin-left:auto}
 .shop-search input{flex:1;min-width:0;border:0;background:transparent;padding:12px 14px;font:inherit;font-size:.95rem;outline:0}
 .shop-search button{border:0;background:#0b79bf;color:#fff;width:52px;cursor:pointer;display:grid;place-items:center}
 .shop-search svg{width:20px;height:20px}
-.shop-cats{display:flex;gap:0;margin-top:10px;background:#efefef;border-radius:6px;overflow-x:auto;scrollbar-width:none}
+.shop-cats{display:flex;gap:0;margin-top:0;flex:1 1 auto;min-width:0;background:#efefef;border-radius:0;overflow-x:auto;scrollbar-width:none}
 .shop-cats::-webkit-scrollbar{display:none}
 .shop-cats button{flex:0 0 auto;border:0;background:transparent;padding:12px 20px;font:inherit;font-size:.9rem;color:#333;cursor:pointer;white-space:nowrap}
 .shop-cats button:hover{background:#e2e2e2}
 .shop-cats button.active{background:#2b2b2b;color:#fff}
-.shop-banner{position:relative;height:clamp(190px,30vw,340px);border-radius:10px;overflow:hidden;margin-bottom:16px;background:#111}
+.shop-banner{position:relative;height:clamp(190px,30vw,340px);border-radius:0;overflow:hidden;margin-bottom:16px;background:#111}
 .shop-slide{position:absolute;inset:0;display:flex;align-items:center;padding:0 clamp(24px,7vw,90px);color:#fff;opacity:0;visibility:hidden;transition:opacity .5s}
 .shop-slide.is-active{opacity:1;visibility:visible}
 .shop-slide h2{margin:0 0 8px;font-size:clamp(1.5rem,4.2vw,3rem);line-height:1.1;font-weight:700;color:#fff}
@@ -513,11 +513,15 @@
 </style><style id="shop-picks-fix">
 html,body{overflow-x:clip!important}
 .accessories-page main{width:100%!important;max-width:100%!important;margin:0!important;padding-left:0!important;padding-right:0!important;transform:none!important;left:0!important}
-.accessories-page main > section#accessories{box-sizing:border-box!important;width:100%!important;max-width:1232px!important;margin:0 auto!important;padding:14px 16px 40px!important;left:0!important;transform:none!important}
+.accessories-page main > section#accessories{box-sizing:border-box!important;width:100%!important;max-width:1232px!important;margin:0 auto!important;padding:0 16px 40px!important;left:0!important;transform:none!important}
 .accessories-page #accessories .shop-top,.accessories-page #accessories .shop-banner,.accessories-page #accessories .shop-rowhead,.accessories-page #accessories .shop-row,.accessories-page #accessories .shop-promos{margin-left:0!important;margin-right:0!important}
 .accessories-page #accessory-grid.shop-grid > * p:not(.accessory-price),.accessories-page #accessory-grid.shop-grid > * .accessory-desc,.accessories-page #accessory-grid.shop-grid > * [class*="desc"]{display:none!important}
 .accessories-page #accessory-grid.shop-grid .accessory-price.sp-ask{font-size:.95rem!important;font-weight:600!important;color:#555!important}
 .shop-arrow.prev{left:6px!important}.shop-arrow.next{right:6px!important}
+</style><style>/*seeall-label*/
+#shop-see-all,#shop-see-all:hover,#shop-see-all:focus,#shop-see-all:active{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;padding:0!important;min-height:0!important;height:auto!important;width:auto!important;outline:0;color:#000!important;font-size:.9rem;font-weight:700;cursor:pointer}
+#shop-see-all:hover{text-decoration:underline}
+#shop-see-all:focus-visible{text-decoration:underline;outline:2px solid #000;outline-offset:3px}
 </style></head>
 <body class="accessories-page">
   <script src="site.js"></script>
@@ -578,24 +582,48 @@ html,body{overflow-x:clip!important}
 
     <section class="wrap section accessory-section" id="accessories" aria-labelledby="accessories-title">
 <div class="shop-top" id="shop-top">
-  <div class="shop-search"><input id="shop-search-input" type="search" placeholder="Search accessories, chargers, cables..." aria-label="Search accessories"><button type="button" id="shop-search-btn" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="2"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div>
   <div class="shop-cats" id="shop-cats">
     <button type="button" class="active" data-kw="">All</button>
     <button type="button" data-kw="charger,adapter,plug">Chargers</button>
     <button type="button" data-kw="cable,usb,lead">Cables</button>
     <button type="button" data-kw="case,cover,pouch">Cases</button>
     <button type="button" data-kw="earphone,headset,earbud,headphone">Earphones</button>
-    <button type="button" data-kw="protector,glass">Screen protectors</button>
-    <button type="button" data-kw="power bank,powerbank,battery">Power banks</button>
+    <button type="button" data-kw="protector,glass">Screen Protectors</button>
+    <button type="button" data-kw="power bank,powerbank,battery">Power Banks</button>
+<button type="button" data-kw="machine,tool,soldering,separator,microscope,programmer,laminat,welder">Repair Machines</button>
   </div>
+<div class="shop-search"><input id="shop-search-input" type="search" placeholder="Search accessories, chargers, cables..." aria-label="Search accessories"><button type="button" id="shop-search-btn" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" stroke-width="2"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div>
 </div>
 <div class="shop-banner" id="shop-banner">
-  <div class="shop-slide is-active" style="background:linear-gradient(120deg,#0b1f4a,#2563eb)"><div><h2>Phone accessories</h2><p>Chargers, cables, cases and more.</p><a href="https://wa.me/263783060943" target="_blank" rel="noopener noreferrer">Ask on WhatsApp</a></div></div>
-  <div class="shop-slide" style="background:linear-gradient(90deg,rgba(0,0,0,.8),rgba(0,0,0,.15)),url(assets/phone-new-banner.jpg) center/cover"><div><h2>New phones in stock</h2><p>Visit us in Chiredzi.</p><a href="https://wa.me/263783060943" target="_blank" rel="noopener noreferrer">Check availability</a></div></div>
-  <div class="shop-slide" style="background:linear-gradient(120deg,#111,#b91c1c)"><div><h2>Fast, clear repairs</h2><p>We explain every repair before we start.</p><a href="repairs.html">Our repairs</a></div></div>
+<div class="shop-slide is-active" role="img" aria-label="New phones in stock" style="background:url(assets/banners/banner1.jpg) center/cover no-repeat"></div>
+<div class="shop-slide" role="img" aria-label="Accessories sale" style="background:url(assets/banners/banner2.jpg) center/cover no-repeat"></div>
+<div class="shop-slide" role="img" aria-label="Fast, clear repairs" style="background:url(assets/banners/banner3.jpg) center/cover no-repeat"></div>
+<div class="shop-slide" role="img" aria-label="Cracked screen? We fix it today" style="background:url(assets/banners/banner4.jpg) center/cover no-repeat"></div>
+<div class="shop-slide" role="img" aria-label="Chargers, cables and cases" style="background:url(assets/banners/banner5.jpg) center/cover no-repeat"></div>
   <button type="button" class="shop-bn prev" aria-label="Previous">&#8249;</button><button type="button" class="shop-bn next" aria-label="Next">&#8250;</button>
-  <div class="shop-dots"><i class="on"></i><i></i><i></i></div>
+  <div class="shop-dots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
 </div>
+<style>.shop-brands{position:relative;background:#fff;margin:0 0 12px;padding:12px 56px 14px}.shop-brands h3{margin:0 0 8px;font-size:1.05rem;font-weight:700;color:#444}.sb-track{display:flex;gap:40px;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;align-items:center}.sb-track::-webkit-scrollbar{display:none}.sb-item{flex:0 0 180px;height:70px;display:flex;align-items:center;justify-content:center}.sb-item img{max-width:150px;max-height:50px;object-fit:contain}.sb-item span{font-weight:800;font-size:1.15rem;color:#333;letter-spacing:.02em}/*sbfix*/.sb-arrow{position:absolute;top:calc(12px + 30px + 35px);transform:translateY(-50%);display:flex;align-items:center;justify-content:center;padding:0;width:32px;height:32px;border:0;border-radius:50%;background:#b5b5b5;color:#fff;font-size:1.2rem;line-height:1;cursor:pointer}.sb-arrow.l{left:14px}.sb-arrow.r{right:14px;background:#666}</style>
+<div class="shop-brands" id="shop-brands"><h3>Featured Brands</h3><div class="sb-track" id="sb-track">
+<div class="sb-item"><img src="assets/brands/anker.png" alt="Anker" onerror="this.outerHTML='<span>Anker</span>'"></div>
+<div class="sb-item"><img src="assets/brands/apple.png" alt="Apple" onerror="this.outerHTML='<span>Apple</span>'"></div>
+<div class="sb-item"><img src="assets/brands/atten.jpg" alt="Atten" onerror="this.outerHTML='<span>Atten</span>'"></div>
+<div class="sb-item"><img src="assets/brands/huawei.png" alt="Huawei" onerror="this.outerHTML='<span>Huawei</span>'"></div>
+<div class="sb-item"><img src="assets/brands/infinix.png" alt="Infinix" onerror="this.outerHTML='<span>Infinix</span>'"></div>
+<div class="sb-item"><img src="assets/brands/itel.png" alt="Itel" onerror="this.outerHTML='<span>Itel</span>'"></div>
+<div class="sb-item"><img src="assets/brands/jbl.png" alt="Jbl" onerror="this.outerHTML='<span>Jbl</span>'"></div>
+<div class="sb-item"><img src="assets/brands/nokia.png" alt="Nokia" onerror="this.outerHTML='<span>Nokia</span>'"></div>
+<div class="sb-item"><img src="assets/brands/oppo.png" alt="Oppo" onerror="this.outerHTML='<span>Oppo</span>'"></div>
+<div class="sb-item"><img src="assets/brands/oraimo.png" alt="Oraimo" onerror="this.outerHTML='<span>Oraimo</span>'"></div>
+<div class="sb-item"><img src="assets/brands/redmi.jpg" alt="Redmi" onerror="this.outerHTML='<span>Redmi</span>'"></div>
+<div class="sb-item"><img src="assets/brands/samsung.avif" alt="Samsung" onerror="this.outerHTML='<span>Samsung</span>'"></div>
+<div class="sb-item"><img src="assets/brands/sony.png" alt="Sony" onerror="this.outerHTML='<span>Sony</span>'"></div>
+<div class="sb-item"><img src="assets/brands/tecno.webp" alt="Tecno" onerror="this.outerHTML='<span>Tecno</span>'"></div>
+<div class="sb-item"><img src="assets/brands/xiaomi.png" alt="Xiaomi" onerror="this.outerHTML='<span>Xiaomi</span>'"></div>
+<div class="sb-item"><img src="assets/brands/yihua.webp" alt="Yihua" onerror="this.outerHTML='<span>Yihua</span>'"></div>
+</div></div>
+
+
 <div class="shop-rowhead"><h2 id="accessories-title">Top Picks</h2><button type="button" id="shop-see-all">View More</button></div>
       
       <div class="shop-row"><button type="button" class="shop-arrow prev" aria-label="Scroll left">&#8249;</button><button type="button" class="shop-arrow next" aria-label="Scroll right">&#8250;</button><div class="service-grid shop-grid" id="accessory-grid">
@@ -1374,7 +1402,7 @@ function apply(){var c=0;[].forEach.call(g.children,function(el){var tx=(el.text
 inp.addEventListener('input',function(){q=inp.value.trim().toLowerCase();apply()});
 document.getElementById('shop-search-btn').onclick=apply;
 [].forEach.call(document.querySelectorAll('#shop-cats button'),function(x){x.onclick=function(){[].forEach.call(document.querySelectorAll('#shop-cats button'),function(y){y.classList.remove('active')});x.classList.add('active');kw=(x.getAttribute('data-kw')||'').split(',').filter(Boolean);apply()}});
-var all=document.getElementById('shop-see-all');all.onclick=function(){var w=g.classList.toggle('wrap-all');all.textContent=w?'Show less':'See all'};
+var all=document.getElementById('shop-see-all');all.onclick=function(){var w=g.classList.toggle('wrap-all');all.textContent='View More'};
 })();
 </script><script id="shop-open-product">
 (function(){var g=document.getElementById('accessory-grid');if(!g)return;
@@ -1393,7 +1421,87 @@ new MutationObserver(dress).observe(g,{childList:true})})();
 (function(){var g=document.getElementById('accessory-grid');if(!g)return;
 function fix(){[].forEach.call(g.children,function(c){if(c.querySelector('.accessory-price'))return;var p=document.createElement('p');p.className='accessory-price sp-ask';p.textContent='Ask for price';c.appendChild(p)})}
 fix();new MutationObserver(fix).observe(g,{childList:true})})();
-</script></body>
+</script><script>/*sbjs*/(function(){var t=document.getElementById('sb-track');if(!t)return;var s=document.createElement('style');s.textContent='#shop-brands{overflow:hidden!important;padding-left:0!important;padding-right:0!important}#sb-track{animation:none!important;overflow:visible!important;width:max-content!important;gap:0!important;flex-wrap:nowrap!important;will-change:transform}#sb-track .sb-item{flex:0 0 180px!important}';document.head.appendChild(s);t.innerHTML+=t.innerHTML;var x=0,last=0,paused=false;t.addEventListener('mouseenter',function(){paused=true});t.addEventListener('mouseleave',function(){paused=false});function step(n){var dt=last?Math.min(n-last,50):16;last=n;if(!paused){x-=dt*0.05;var half=t.scrollWidth/2;if(half>0&&-x>=half)x+=half;t.style.transform='translateX('+x+'px)';}requestAnimationFrame(step)}requestAnimationFrame(step)})();</script>
+<style>/*sbmist*/#shop-brands{position:relative}#shop-brands::before,#shop-brands::after{content:"";position:absolute;top:0;bottom:0;width:clamp(50px,9vw,140px);z-index:3;pointer-events:none}#shop-brands::before{left:0;background:linear-gradient(90deg,#fff 15%,rgba(255,255,255,0))}#shop-brands::after{right:0;background:linear-gradient(270deg,#fff 15%,rgba(255,255,255,0))}</style>
+<style>/*sbtitle*/#shop-brands h3{position:relative;z-index:5}</style>
+<style>/*sbpad*/#shop-brands{padding-top:20px!important;padding-bottom:18px!important}#shop-brands h3{padding:0 32px!important;margin:0 0 12px!important}</style>
+<style id="shop-cat-rows-css">
+#cat-rows .shop-row{position:relative}
+.accessories-page .cat-grid{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding:4px 2px 10px;scroll-snap-type:x proximity}
+.accessories-page .cat-grid::-webkit-scrollbar{display:none}
+.accessories-page .cat-grid.wrap-all{flex-wrap:wrap;overflow:visible}
+.accessories-page .cat-grid > *{position:relative;flex:0 0 calc((100% - 60px)/6);min-width:170px;background:#fff;border:0;border-radius:4px;padding:12px 14px 14px;box-shadow:0 1px 4px rgba(0,0,0,.14);cursor:pointer;display:flex;flex-direction:column;text-align:left;scroll-snap-align:start}
+.accessories-page .cat-grid .accessory-photo{height:165px;margin:6px 0 14px;background:#fff}
+.accessories-page .cat-grid .accessory-photo img{object-fit:contain}
+.accessories-page .cat-grid h3{font-size:.92rem;font-weight:400;line-height:1.35;color:#333;margin:0 0 10px;min-height:2.7em;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.accessories-page .cat-grid .accessory-price{margin:0 0 6px;font-size:1.05rem;font-weight:700;color:#111;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.accessories-page .cat-grid .sp-old{font-size:.8rem;font-weight:400;color:#888;text-decoration:line-through}
+.accessories-page .cat-grid .sp-i{width:14px;height:14px;border-radius:50%;background:#bbb;color:#fff;font-size:.62rem;font-weight:700;display:inline-grid;place-items:center}
+.accessories-page .cat-grid > * a,.accessories-page .cat-grid > * p:not(.accessory-price),.accessories-page .cat-grid > * [class*="desc"]{display:none!important}
+@media(max-width:900px){.accessories-page .cat-grid > *{flex-basis:46%}}
+</style>
+<script id="shop-cat-rows">
+(function(){var g=document.getElementById('accessory-grid');if(!g)return;var data=null,timer;
+function esc(s){return String(s||'').replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function src(c){var i=c.querySelector('img');return i?i.getAttribute('src'):''}
+function build(){if(!data)return;var old=document.getElementById('cat-rows');if(old)old.remove();
+var map={};data.forEach(function(x){map[x.image_url]=x});
+var cards=[].slice.call(g.children).filter(function(c){return map[src(c)]});if(!cards.length)return;
+var groups=[];
+function add(title,list){if(list.length)groups.push({t:title,l:list})}
+var deals=cards.filter(function(c){var d=map[src(c)];return Number(d.old_price)>Number(d.price)&&Number(d.price)>0});
+add('Best Deals',deals);
+var top=cards.filter(function(c){return Number(map[src(c)].rating)>=4}).sort(function(a,b){return Number(map[src(b)].rating)-Number(map[src(a)].rating)});
+add('Top Rated',top);
+var cats={};cards.forEach(function(c){var k=map[src(c)].category||'Other';(cats[k]=cats[k]||[]).push(c)});
+Object.keys(cats).sort().forEach(function(k){add(k,cats[k])});
+var box=document.createElement('div');box.id='cat-rows';
+groups.forEach(function(gr){var w=document.createElement('div');
+w.innerHTML='<div class="shop-rowhead"><h2>'+esc(gr.t)+'</h2><button type="button">View More</button></div><div class="shop-row"><button type="button" class="shop-arrow prev" aria-label="Scroll left">&#8249;</button><button type="button" class="shop-arrow next" aria-label="Scroll right">&#8250;</button><div class="cat-grid"></div></div>';
+var grid=w.querySelector('.cat-grid');gr.l.forEach(function(c){var n=c.cloneNode(true);n.style.display='';grid.appendChild(n)});
+w.querySelector('.prev').onclick=function(){grid.scrollBy({left:-grid.clientWidth*.8,behavior:'smooth'})};
+w.querySelector('.next').onclick=function(){grid.scrollBy({left:grid.clientWidth*.8,behavior:'smooth'})};
+var btn=w.querySelector('.shop-rowhead button');btn.onclick=function(){grid.classList.toggle('wrap-all');btn.textContent='View More'};
+grid.addEventListener('click',function(e){var cd=e.target.closest('.cat-grid > *');if(!cd)return;var i=cd.querySelector('img');if(i)location.href='product.html?img='+encodeURIComponent(i.getAttribute('src'))});
+box.appendChild(w)});
+g.closest('.shop-row').after(box)}
+function later(){clearTimeout(timer);timer=setTimeout(build,500)}
+fetch('/api/accessories').then(function(r){return r.json()}).then(function(a){data=a||[];later()}).catch(function(){});
+new MutationObserver(function(m){if(m.some(function(x){return x.target===g}))later()}).observe(g,{childList:true});
+var inp=document.getElementById('shop-search-input');if(inp)inp.addEventListener('input',function(){var b=document.getElementById('cat-rows');if(b)b.style.display=inp.value.trim()?'none':''});
+})();
+</script>
+<style id="shop-cat-rows-fix">
+.accessories-page #cat-rows .cat-grid{gap:12px!important;padding:4px 2px 10px!important}
+.accessories-page #cat-rows .cat-grid > *{flex:0 0 calc((100% - 60px)/6)!important;min-width:170px!important;max-width:215px!important;background:#fff!important;border:0!important;border-radius:4px!important;padding:12px 14px 14px!important;box-shadow:0 1px 4px rgba(0,0,0,.14)!important}
+.accessories-page #cat-rows .cat-grid .accessory-photo{height:165px!important;margin:6px 0 14px!important;border-radius:0!important;background:#fff!important}
+.accessories-page #cat-rows .cat-grid .accessory-photo img{width:100%!important;height:100%!important;object-fit:contain!important}
+.accessories-page #cat-rows .cat-grid h3{font-size:.92rem!important;font-weight:400!important;color:#333!important}
+.accessories-page #cat-rows .cat-grid .accessory-price{font-size:1.05rem!important;font-weight:700!important;color:#111!important}
+.accessories-page #cat-rows .shop-rowhead{margin:18px 0 12px!important}
+.accessories-page #cat-rows .shop-rowhead h2{font-size:1.25rem!important;font-weight:700!important;color:#4a4a4a!important}
+</style>
+<script id="shop-cat-rows-tidy">
+(function(){
+function tidy(){
+var box=document.getElementById('cat-rows');if(!box)return;
+[].forEach.call(box.children,function(w){
+var h=w.querySelector('.shop-rowhead h2'),grid=w.querySelector('.cat-grid');if(!h||!grid)return;
+var n=grid.children.length,t=h.textContent.trim();
+if((t==='Best Deals'||t==='Top Rated')&&n<3){w.style.display='none';return}
+w.style.display='';
+var more=grid.scrollWidth>grid.clientWidth+4;
+[].forEach.call(w.querySelectorAll('.shop-arrow'),function(a){a.style.display=more?'':'none'});
+var b=w.querySelector('.shop-rowhead button');if(b)b.style.display=n>6?'':'none';
+});
+}
+var t;function later(){clearTimeout(t);t=setTimeout(tidy,300)}
+new MutationObserver(later).observe(document.body,{childList:true,subtree:false});
+var tries=0,iv=setInterval(function(){tidy();if(++tries>20)clearInterval(iv)},500);
+window.addEventListener('resize',later);
+})();
+</script>
+</body>
 </html>
 
 

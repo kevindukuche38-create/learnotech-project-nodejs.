@@ -342,8 +342,45 @@
   setupCopyButton(copySqlBtn, "sql-code-display", "Supabase SQL script copied to clipboard!");
   setupCopyButton(copyEnvBtn, "env-code-display", ".env configuration template copied to clipboard!");
 
+  function invEsc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+
+  function renderInventory(items, target) {
+    var searchEl = document.getElementById("inv-search");
+    var catSel = document.getElementById("inv-cat");
+    var q = searchEl ? searchEl.value.trim().toLowerCase() : "";
+    var cat = catSel ? catSel.value : "";
+    if (catSel) {
+      var cats = Array.from(new Set(items.map(function (i) { return i.category; }).filter(Boolean))).sort();
+      catSel.innerHTML = '<option value="">All categories</option>' + cats.map(function (c) { return '<option value="' + invEsc(c) + '">' + invEsc(c) + '</option>'; }).join("");
+      catSel.value = cats.indexOf(cat) >= 0 ? cat : "";
+      cat = catSel.value;
+    }
+    var shown = items.filter(function (i) {
+      if (cat && i.category !== cat) return false;
+      if (!q) return true;
+      return ((i.name || "") + " " + (i.category || "") + " " + (i.description || "")).toLowerCase().indexOf(q) >= 0;
+    });
+    var count = document.getElementById("inv-count");
+    if (count) count.textContent = shown.length + " of " + items.length + " items";
+    if (!shown.length) { target.innerHTML = '<div class="inv-empty">No items found.</div>'; return; }
+    var rows = shown.map(function (i) {
+      var cur = i.currency || "USD";
+      var price = (i.price === null || i.price === "" || i.price === undefined) ? "-" : cur + " " + Number(i.price).toFixed(2);
+      var old = (i.old_price !== null && i.old_price !== undefined && i.old_price !== "") ? '<span class="inv-old">' + invEsc(cur + " " + Number(i.old_price).toFixed(2)) + '</span>' : "-";
+      var rating = (i.rating !== null && i.rating !== undefined && i.rating !== "") ? "&#9733; " + Number(i.rating).toFixed(1) : "-";
+      var reviews = (i.reviews !== null && i.reviews !== undefined && i.reviews !== "") ? invEsc(i.reviews) : "-";
+      var photo = i.image_url ? '<img src="' + invEsc(i.image_url) + '" alt="" loading="lazy">' : "";
+      var tag = '<span class="status-tag ' + (i.is_active ? "active" : "inactive") + '">' + (i.is_active ? "In Stock" : "Hidden") + '</span>';
+      var id = invEsc(i.id);
+      return '<tr><td>' + photo + '</td><td class="inv-name">' + invEsc(i.name) + '</td><td>' + invEsc(i.category) + '</td><td>' + invEsc(price) + '</td><td>' + old + '</td><td>' + rating + '</td><td>' + reviews + '</td>'
+        + '<td><div class="inv-acts">' + tag + '<button type="button" class="btn btn-secondary btn-sm" data-kind="accessory" data-action="edit" data-id="' + id + '">Edit</button><button type="button" class="btn btn-danger btn-sm" data-kind="accessory" data-action="delete" data-id="' + id + '">Delete</button></div></td></tr>';
+    }).join("");
+    target.innerHTML = '<div class="inv-scroll"><table class="inv-table"><thead><tr><th>Photo</th><th>Name</th><th>Category</th><th>Price</th><th>Old price</th><th>Rating</th><th>Reviews</th><th>Actions</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
+  }
+
   // Render Table Rows
   function renderRows(items, target, kind) {
+    if (kind === "accessory") { renderInventory(items, target); return; }
     if (!items.length) {
       const empty = document.createElement("div");
       empty.className = "data-empty";
@@ -510,6 +547,9 @@
     data.append("description", document.getElementById("accessory-description").value.trim());
     data.append("price", document.getElementById("accessory-price").value);
     data.append("currency", document.getElementById("accessory-currency").value.trim() || "USD");
+  data.append("oldPrice", document.getElementById("accessory-old-price").value);
+  data.append("rating", document.getElementById("accessory-rating").value);
+  data.append("reviews", document.getElementById("accessory-reviews").value);
     data.append("sortOrder", document.getElementById("accessory-sort-order").value || "0");
     data.append("isActive", String(document.getElementById("accessory-active").checked));
     if (accessoryImage.files && accessoryImage.files[0]) {
@@ -536,9 +576,11 @@
   }
 
   function resetAccessory() {
+    var invM = document.getElementById("inv-modal"); if (invM) invM.classList.remove("inv-open");
     editingAccessory = null;
     accessoryForm.reset();
     document.getElementById("accessory-currency").value = "USD";
+  document.getElementById("accessory-old-price").value = ""; document.getElementById("accessory-rating").value = ""; document.getElementById("accessory-reviews").value = "";
     document.getElementById("accessory-sort-order").value = "0";
     document.getElementById("accessory-active").checked = true;
     accessoryFileInfo.style.display = "none";
@@ -656,6 +698,7 @@
     document.getElementById("accessory-description").value = item.description || "";
     document.getElementById("accessory-price").value = item.price ?? "";
     document.getElementById("accessory-currency").value = item.currency || "USD";
+  document.getElementById("accessory-old-price").value = item.old_price ?? ""; document.getElementById("accessory-rating").value = item.rating ?? ""; document.getElementById("accessory-reviews").value = item.reviews ?? "";
     document.getElementById("accessory-sort-order").value = item.sort_order ?? 0;
     document.getElementById("accessory-active").checked = Boolean(item.is_active);
     accessoryImage.value = "";
@@ -716,6 +759,23 @@
       }
     }
   });
+
+  // Inventory top bar + pop-up form
+  (function () {
+    var m = document.getElementById("inv-modal");
+    function $(id) { return document.getElementById(id); }
+    $("inv-search").addEventListener("input", function () { renderInventory(accessories, accessoryList); });
+    $("inv-cat").addEventListener("change", function () { renderInventory(accessories, accessoryList); });
+    $("inv-refresh").addEventListener("click", function () { loadData(); });
+    $("inv-add").addEventListener("click", function () { resetAccessory(); m.classList.add("inv-open"); });
+    $("inv-close").addEventListener("click", function () { resetAccessory(); });
+    m.addEventListener("click", function (e) { if (e.target === m) resetAccessory(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && m.classList.contains("inv-open")) resetAccessory(); });
+    document.addEventListener("click", function (e) {
+      var b = e.target.closest('button[data-kind="accessory"][data-action="edit"]');
+      if (b) m.classList.add("inv-open");
+    });
+  })();
 
   // Initialization
   async function initialize() {

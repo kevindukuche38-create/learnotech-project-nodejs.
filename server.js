@@ -71,6 +71,8 @@ db.exec(`
   );
 `);
 
+for (const col of ['old_price REAL','rating REAL','reviews INTEGER']) { try { db.exec('ALTER TABLE accessories ADD COLUMN ' + col); } catch {} }
+
 const mimeTypes = {
   '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8', '.json': 'application/json; charset=utf-8',
@@ -447,20 +449,24 @@ async function handleAdminItems(req, res, kind, id) {
       const sort = Math.max(0, Number.parseInt(f.sortOrder || '0', 10) || 0);
       const desc = cleanText(f.description, 600);
       const currency = cleanText(f.currency || 'USD', 8);
+      const numOrNull = (v) => { const s = String(v ?? '').trim(); const n = Number(s); return s !== '' && Number.isFinite(n) && n >= 0 ? n : null; };
+      const oldPrice = numOrNull(f.oldPrice);
+      let rating = numOrNull(f.rating); if (rating !== null) rating = Math.min(5, rating);
+      let reviews = numOrNull(f.reviews); if (reviews !== null) reviews = Math.round(reviews);
       const isActive = asBool(f.isActive, true) ? 1 : 0;
 
       if (USE_SUPABASE) {
         if (id) {
           const result = await supabaseRest(`/rest/v1/accessories?id=eq.${encodeURIComponent(id)}`, {
             method: 'PATCH',
-            body: JSON.stringify({ name, category, description: desc, image_url: imageUrl, price, currency, is_active: isActive, sort_order: sort, updated_at: now })
+            body: JSON.stringify({ name, category, description: desc, image_url: imageUrl, price, currency, old_price: oldPrice, rating, reviews, is_active: isActive, sort_order: sort, updated_at: now })
           });
           savedItem = Array.isArray(result) ? result[0] : result;
         } else {
           id = randomUUID();
           const result = await supabaseRest('/rest/v1/accessories', {
             method: 'POST',
-            body: JSON.stringify({ id, name, category, description: desc, image_url: imageUrl, price, currency, is_active: isActive, sort_order: sort, created_at: now, updated_at: now })
+            body: JSON.stringify({ id, name, category, description: desc, image_url: imageUrl, price, currency, old_price: oldPrice, rating, reviews, is_active: isActive, sort_order: sort, created_at: now, updated_at: now })
           });
           savedItem = Array.isArray(result) ? result[0] : result;
         }
@@ -472,6 +478,7 @@ async function handleAdminItems(req, res, kind, id) {
           id = randomUUID();
           db.prepare('INSERT INTO accessories(id,name,category,description,image_url,price,currency,is_active,sort_order,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?,?,?)').run(id, ...values.slice(0, 8), now, now);
         }
+        db.prepare('UPDATE accessories SET old_price=?,rating=?,reviews=? WHERE id=?').run(oldPrice, rating, reviews, id);
         savedItem = localRow('SELECT * FROM accessories WHERE id=?', id);
       }
     }
@@ -505,7 +512,7 @@ function serveUpload(pathname, req, res) {
 function serveFile(file, req, res) {
   if (!existsSync(file)) return fail(res, 404, 'Page or file not found.');
   const type = mimeTypes[extname(file).toLowerCase()] || 'application/octet-stream';
-  res.writeHead(200, { 'Content-Type': type, 'X-Content-Type-Options': 'nosniff', 'Cache-Control': file.endsWith('.html') ? 'no-cache' : 'public, max-age=3600' });
+  res.writeHead(200, { 'Content-Type': type, 'X-Content-Type-Options': 'nosniff', 'Cache-Control': /\.(html|js|css)$/.test(file) ? 'no-cache' : 'public, max-age=3600' });
   if (req.method === 'HEAD') return res.end();
   createReadStream(file).pipe(res);
 }
